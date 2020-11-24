@@ -7,6 +7,29 @@
     <title>Jogo da Forca</title>
 </head>
 <body>
+    <h1>JOGO DA FORCA</h1>
+    <div id="stage">
+        <div class="forca">
+            <img src="./images/0.png" alt="Cabeça" id="corpo">
+            
+        </div>
+        <div class="tela_palavra">
+            <div id="campo_aviso"></div>
+            <div id="campo_secreto">_ _ _ _ _ _ _ _ _ _ </div>
+            <div id="dica">Dica: Alimento</div>
+            <div id="letras_usadas"></div>
+            <div id="campo_aviso2"></div>
+        </div>
+        <div class="campo_preenchimento">
+            <p>Insira uma letra:  </p>
+            <input id="campo" type="text" minlength="1" maxlength="1">
+            <div id="submit" onclick="submitLetter()" > ENVIAR </div>
+        </div>
+    </div>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/game.js"></script>
+    <script src="scripts/interface.js"></script>
     
 </body>
 </html>
