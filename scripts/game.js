@@ -6,6 +6,7 @@ var campo_palavra = []; //Como está no campo do _ _ _  _ _
 var erros = 0;
 var tema = "alimentos"
 var game_over = false
+var venceu = false
 
 var caracteres_especiais = ['ã', 'á', 'à', 'â', 'é', 'è', 'ê', 'î', 'í', 'ì', 'ó', 'ò', 'õ', 'ô', 'ú', 'ù', 'û', 'ç']
 
@@ -18,14 +19,45 @@ function pegar_palavra(){
         case "alimentos":
             var size = alimentos.length;
             n = Math.floor(size * n)
-            console.log(n)
-
             palavra = alimentos[n];
             
             break;
         
         case "bebidas":
+            var size = bebidas.length;
+            n = Math.floor(size * n);
             palavra = bebidas[n];
+            break;
+
+        case "cidades_estados":
+            var size = cidades_estados.length;
+            n = Math.floor(size * n)
+            palavra = cidades_estados[n];
+            break;
+
+
+        case "filmes_series":
+            var size = filmes_series.length;
+            n = Math.floor(size * n)
+            palavra = filmes_series[n];
+            break;
+
+        case "animes_mangas":
+            var size = animes_mangas.length;
+            n = Math.floor(size * n)
+            palavra = animes_mangas[n];
+            break;
+        
+        case "drag_queens":
+            var size = drag_queens.length;
+            n = Math.floor(size * n)
+            palavra = drag_queens[n];
+            break;
+        
+        case "dificeis":
+            var size = dificeis.length;
+            n = Math.floor(size * n)
+            palavra = dificeis[n];
             break;
         }
     
@@ -63,7 +95,7 @@ function processar_campo(){
 
     for(let i = 0; i < palavra_secreta.length; i++){
         if(palavra_secreta[i] == " "){
-            campo_palavra.push("&nbsp &nbsp ") 
+            campo_palavra.push("&nbsp ") 
         }
         else if(palavra_secreta[i] == "-"){
             campo_palavra.push(" - ")
@@ -97,6 +129,10 @@ function checar_letra(letra){
         
     }
     else{
+        if(!campo_palavra.includes(" _ ")){
+            venceu = true;
+        }
+
         return 0;
     }
 }
@@ -104,4 +140,18 @@ function checar_letra(letra){
 function letraUsada(letra){
     letras_usadas.push(letra)
     
+}
+
+function mudar_categoria(nova_categoria){
+    tema = nova_categoria
+}
+
+function reset_game(){
+    game_over = false;
+    venceu = false
+    erros = 0;
+    palavra = '';
+    campo_palavra = [];
+    palavra_secreta = [];
+    letras_usadas = [];
 }

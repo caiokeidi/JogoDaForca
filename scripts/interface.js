@@ -11,10 +11,14 @@ function processar_palavra(){
 
     for(let i = 0; i < campo_palavra.length; i++){
         campo_secreto.innerHTML += campo_palavra[i]
-    }
+    }    
 
+    atualizar_dica();
+
+    let botao_trocar = document.getElementById("botao_trocar");
+    botao_trocar.style = "display: none"
     
-    
+
 }
 
 function submitLetter(){
@@ -32,6 +36,17 @@ function submitLetter(){
         }
         else{
             atualizarTela()
+
+            if(venceu){
+                let campo_aviso = document.getElementById("campo_aviso");
+                campo_aviso.innerHTML = "VOCÊ GANHOU!"
+
+                let campo_aviso2 = document.getElementById("campo_aviso2");
+                campo_aviso2.innerHTML = `A Palavra está correta! Parabéns!`;
+
+                let botao_trocar = document.getElementById("botao_trocar");
+                botao_trocar.style = "display: inline-block"
+            }
         }
         
         atualizarUtilizadas();
@@ -79,8 +94,79 @@ function atualizarForca(){
         let campo_aviso2 = document.getElementById("campo_aviso2");
         campo_aviso2.innerHTML = `A Palavra era: ${palavra}`;
 
+        let botao_trocar = document.getElementById("botao_trocar");
+        botao_trocar.style = "display: inline-block"
+    }
+}
+
+function atualizar_dica(){
+    let campo_dica = document.getElementById("dica");
+    let dica = '';
+
+    switch(tema){
+        case "alimentos":
+            dica = "Alimentos(Qualquer tipo)"
+            break;
+        
+        case "bebidas":
+            dica = "Bebidas(Qualquer tipo)"
+            break;
+
+        case "cidades_estados":
+            dica = "Cidade, Estado ou País"
+            break;
+
+        case "filmes_series":
+            dica = "Filmes e Séries"
+            break;
+
+        case "animes_mangas":
+            dica = "Animes e Mangás"
+            break;
+        
+        case "drag_queens":
+            dica = "Drag Queens (Brasileiras ou Internacionais)"
+            break;
+        
+        case "dificeis":
+            dica = "Boa sorte, pode ser qualquer coisa."
+            break;
     }
 
-    }
+    campo_dica.innerHTML = `Dica: ${dica}`
+}
+
+function reset(categoria){
+    mudar_categoria(categoria)
+    reset_game();
+    processar_palavra();
+    atualizarForca();
+    atualizarTela();
+    atualizarUtilizadas();
+
+    let campo_aviso = document.getElementById("campo_aviso");
+    campo_aviso.innerHTML = ""
+
+    let campo_aviso2 = document.getElementById("campo_aviso2");
+    campo_aviso2.innerHTML = "";
+
+    
+
+}
+
+
+function submitTrocar(){
+    reset_game();
+    processar_palavra();
+    atualizarForca();
+    atualizarTela();
+    atualizarUtilizadas();
+
+    let campo_aviso = document.getElementById("campo_aviso");
+    campo_aviso.innerHTML = ""
+
+    let campo_aviso2 = document.getElementById("campo_aviso2");
+    campo_aviso2.innerHTML = "";
+}
 
 processar_palavra()

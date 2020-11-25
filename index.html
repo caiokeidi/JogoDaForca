@@ -23,7 +23,22 @@
         <div class="campo_preenchimento">
             <p>Insira uma letra:  </p>
             <input id="campo" type="text" minlength="1" maxlength="1">
-            <div id="submit" onclick="submitLetter()" > ENVIAR </div>
+            <div class="botao_submit" onclick="submitLetter()" > ENVIAR </div>
+            <div class="botao_submit" id="botao_trocar" onclick="submitTrocar()">Nova Palavra</div>
+        </div>
+    </div>
+    <div class="campo_opcoes">
+        <p class="texto_opcoes">Escolha abaixo um tema para resetar o jogo!</p>
+        <div class="campo_botoes1">
+            <div class="botao" id="alimentos" onclick="reset('alimentos')">Alimentos</div>
+            <div class="botao" id="bebidas" onclick="reset('bebidas')">Bebidas</div>
+            <div class="botao" id="cidades_estados" onclick="reset('cidades_estados')">Cidade/Estado</div>
+            <div class="botao" id="filmes_series" onclick="reset('filmes_series')">Filmes/Series</div>
+        </div>
+        <div class="campo_botoes2">
+            <div class="botao" id="animes_mangas" onclick="reset('animes_mangas')">Animes/Mangás</div>
+            <div class="botao" id="drag_queens" onclick="reset('drag_queens')">Animes/Mangás</div>
+            <div class="botao" id="dificeis" onclick="reset('dificeis')">DIFÍCEIS</div>
         </div>
     </div>
 

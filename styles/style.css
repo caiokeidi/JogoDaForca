@@ -1,4 +1,10 @@
 
+
+@keyframes botao_hover{
+    0%{width: 140px ; height: 50px}
+    100%{width: 150px ; height: 60px}
+}
+
 body{
     background-color: beige;
     text-align: center;
@@ -8,6 +14,7 @@ h1{
     color: rgb(80, 80, 80);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 700;
+    font-size: 40px;
     
 }
 
@@ -19,7 +26,8 @@ h1{
     justify-items: center;
     width: 1000px;
 
-
+    border-radius: 20px;
+    box-shadow: 10px 10px gray;
 }
 
 
@@ -104,19 +112,28 @@ h1{
     border-radius: 20px;
 }
 
-#submit{
+.botao_submit{
     width: 100px;
-    height: 30px;
+    height: 40px;
     background-color: beige;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 
     border-radius: 10px;
 
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-weight: 700;
 }
+
+#botao_trocar{
+    background-color: red;
+    color: white;
+    display: none;
+}
+
+
 
 /*FORCA*/
 
@@ -134,3 +151,52 @@ h1{
     
 }
 
+/*Botoes*/
+.botao{
+    width: 140px;
+    height: 50px;
+    border-radius: 10px;
+    border: 5px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background-color: orange;
+
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+}
+
+.botao:hover{
+    animation-name: botao_hover;
+    animation-duration: 500ms;
+}
+
+.campo_opcoes{
+    display: flex;
+    width: 400px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.campo_botoes1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.campo_botoes2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto_opcoes{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15px;
+}

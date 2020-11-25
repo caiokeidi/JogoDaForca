@@ -1,6 +1,6 @@
 
 var alimentos = [
-    "macarrão", "caiçara", "panqueca", "pizza", "pastel", "sushi", "pudim", "brigadeiro", "salada", "batata frita",
+    "macarrão", "panqueca", "pizza", "pastel", "sushi", "pudim", "brigadeiro", "salada", "batata frita",
     "cachorro quente", "chocolate", "bombom", "strogonoff", "pão", "mortadela", "presunto", "iogurte",
     "azeite", "linguiça", "rúcula", "coxinha"
 ]
@@ -16,9 +16,14 @@ var cidades_estados = [
     "florianópolis", "acre", "manaus", "rio grande do norte"
 ]
 
+var filmes_series = [
+    "naruto", "one piece", "bleach", "death note", "fullmetal alchemist", "demon slayer", "nanatsu no taizai", 
+    "one punch man", "bakuman"
+]
+
 var animes_mangas = [
     "naruto", "one piece", "bleach", "death note", "fullmetal alchemist", "demon slayer", "nanatsu no taizai", 
-    "one Punch Man", "bakuman"
+    "one punch man", "bakuman"
 ]
 
 var drag_queens = [
@@ -26,6 +31,6 @@ var drag_queens = [
     "gloria groove", "lia clark", "chad michaels", "violet chachki"
 ]
 
-var dificil = [
+var dificeis = [
     "flecha", "trufa branca", "fronha", "flanco", "mussarela de búfula", "sarampo", "flúor", "iodo", "lentilha"
 ]
