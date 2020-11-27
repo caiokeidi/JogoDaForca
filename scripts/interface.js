@@ -29,24 +29,32 @@ function submitLetter(){
         letra = campo.value.toLowerCase();
         campo.value = ""
 
-        let check = checar_letra(letra)
+        if(!letras_usadas.includes(letra)){
+            
+            let check = checar_letra(letra)
 
-        if(check == 1){
-            atualizarForca();
-        }
-        else{
-            atualizarTela()
-
-            if(venceu){
-                let campo_aviso = document.getElementById("campo_aviso");
-                campo_aviso.innerHTML = "VOCÊ GANHOU!"
-
-                let campo_aviso2 = document.getElementById("campo_aviso2");
-                campo_aviso2.innerHTML = `A Palavra está correta! Parabéns!`;
-
-                let botao_trocar = document.getElementById("botao_trocar");
-                botao_trocar.style = "display: inline-block"
+            if(check == 1){
+                atualizarForca();
             }
+            else{
+                atualizarTela()
+
+                if(venceu){
+                    let campo_aviso = document.getElementById("campo_aviso");
+                    campo_aviso.innerHTML = "VOCÊ GANHOU!"
+
+                    let campo_aviso2 = document.getElementById("campo_aviso2");
+                    campo_aviso2.innerHTML = `A Palavra está correta! Parabéns!`;
+
+                    let botao_trocar = document.getElementById("botao_trocar");
+                    botao_trocar.style = "display: inline-block"
+                    
+                    let corpo = document.getElementById("corpo")
+                    corpo.src = `./images/7.png`
+
+                }
+            }
+            
         }
         
         atualizarUtilizadas();
